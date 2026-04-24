@@ -8,7 +8,7 @@
 >
 > This repo is a live development surface, not a finished system.
 >
-> - **What works today:** the `.md`-based identity loop. A Claude Code session can load identity files via `--cwd`, respond as itself across restarts, and persist continuity through a "letter to next-me" (`current-state.md`). PD — the first entity — has been exercised this way.
+> - **What works today:** the `.md`-based identity loop. A Claude Code session can load identity files via `--cwd`, respond as itself across restarts, and persist continuity through a "letter to next-me" (`current-state.md`). The mechanism was manually validated on 2026-04-14 in a single Phase 0 test invocation of PD — the planned first entity — which responded in character with voice held. **PD has not been launched as a sustained autonomous entity.** It exists as identity files and a hardened sandbox config; it does not yet run on its own.
 > - **What's actively being built:** security protections. Strong safeguards against reckless or dangerous reads and writes are in active development at the syscall level. Two bypass vectors (shell redirect, Python interpreter path) have been closed in Phase 1 hardening; live end-to-end verification is still pending, and the security posture is not yet where it needs to be for full autonomous operation.
 > - **What's next:** the scheduled heartbeat (launchd, 30-minute cadence, Haiku model) — designed but not yet deployed — and *dreaming*, the scheduled reflection / consolidation layer that will use the autonomous cycle to do self-learning, drift audit, and compaction preparation.
 >
@@ -20,7 +20,7 @@
 
 A persistent entity is a Claude Code conversation that keeps its identity across restarts, operating from the Digital Core you've already built — all your rules become its values, all your skills become its capabilities, all your memory becomes its experience. The mechanism is simpler than it looks: a handful of identity files — `SEED.md` (origin), `SOUL.md` (who it is), `current-state.md` (what it was doing last) — load automatically via `claude --cwd <entity-dir>` on every invocation. The entity reads them at session start and responds as itself rather than as a fresh instance. Permissions (the `settings.json` sandbox) bound what it can read, write, and execute — and strong protections against reckless reads and writes are actively being developed at the syscall level, though that work is not yet complete. Scheduled autonomous cycles via launchd, and *dreaming* — scheduled reflection and memory consolidation between sessions — are the next feature set, designed but not yet deployed. The whole system runs on Claude Code's existing affordances; nothing about it is a custom framework or wrapper.
 
-PD — the Playful Sincerity Digital Core — is the first entity. Its identity has been exercised across sessions. The security, heartbeat, and dreaming layers are where the active work is happening.
+PD — the Playful Sincerity Digital Core — is the planned first entity. Its identity layer has been validated in a single manual test invocation; PD has *not* been launched as a sustained autonomous entity yet. The security, heartbeat, and dreaming layers are where the active work is happening before that launch becomes appropriate.
 
 ---
 

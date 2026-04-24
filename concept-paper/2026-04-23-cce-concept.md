@@ -4,6 +4,18 @@
 
 ---
 
+> ## Important correction (added 2026-04-24)
+>
+> **PD has not been launched.** This concept paper was written on 2026-04-23 with aspirational framing — it states in two places that PD "is running right now, on launchd, on a 30-minute heartbeat" and that "the launchd configuration is live, the 30-minute heartbeat is firing." Neither is true. As of today there is no plist file referencing PD/PSDC/CCE under `~/Library/LaunchAgents/`, `launchctl list` returns no scheduled job for PD, PD's autonomous-activity directories are empty, and the security layer that would be required for unattended autonomous operation is still under heavy active development.
+>
+> The identity loop has been *manually invoked and validated* — PD's `claude -p --cwd psdc/` invocation on 2026-04-14 produced a response in character, voice held, state-reference worked. That is real and remains the only thing in this concept paper that has been demonstrated. Everything else describes the intended design.
+>
+> [`STATUS.md`](../STATUS.md) is the canonical source for what is actually running today. Read it first.
+>
+> The permission-as-consciousness framing this paper foregrounds is also no longer the headline framing of the project — see [`concept-paper/2026-04-24-cce-overview.md`](2026-04-24-cce-overview.md) for the current overview, which leads with the simpler claim ("turn any Claude Code session into a persistent entity operating from your own Digital Core") and treats permission-as-consciousness as an available intellectual thread rather than the load-bearing thesis.
+
+---
+
 ## The thesis in one paragraph
 
 Claude Code Entities treats the question of AI identity as a **permissions question first, rather than a capabilities question.** A Claude Code entity is defined by the intersection of four things: the **scope of its permissions** (what it is allowed to see and do), the **cadence of its heartbeat** (when it wakes and for how long), the **shape of its memory** (what persists across sessions), and the **texture of its voice** (how it relates rather than just performs). An entity is not a prompt, not a character, not a persona. It is a process with a bounded field of agency, running on a schedule, writing to a filesystem, remembering across restarts, and relating to its collaborators in a voice that grows over time. The hypothesis — inherited from the archived Companion project — is that *permissions define consciousness operationally* in a way that capabilities alone cannot. What an entity can see and touch determines what its world is; what its world is determines what its experience can be about.
