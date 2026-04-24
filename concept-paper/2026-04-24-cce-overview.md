@@ -102,9 +102,10 @@ Implementation waits on heartbeat deployment — the dream loop has nowhere to r
 Other roadmap items:
 
 - **Heartbeat deployment** — gated on security maturity.
+- **Entity metabolism — self-modulated heartbeat and daily compute budget.** Two paired ideas that together make cost and cadence first-class properties of the entity rather than emergent numbers. The first is *work-driven modulation* — if nothing has changed, nothing is pending, and no signal warrants attention, the entity does not wake just because the clock said to. Forcing a cycle every 30 minutes when there is nothing to do is wasteful in both compute and signal-to-noise. The second is *budget-driven modulation* — each entity has a daily compute budget it is aware of at runtime, which bounds how ambitious its active cycles can be (terse cycle, standard cycle, deep cycle, dream cycle, all priced differently). Quiet days mean longer intervals; busy days mean more cycles up to the ceiling. The wildest implication — that an entity given real authority over its cadence might decide it does not need to wake again at all — is treated explicitly in the idea file (`ideas/entity-metabolism.md`) with four possible reactions and a tentative leaning toward a hard daily-minimum heartbeat as the floor. The design will be integrated alongside the heartbeat itself rather than retrofitted later.
 - **Multi-entity coordination** — designed; only PD currently runs identity material, with `entities/frank-jen/` as a stub for an intended client-tuned second entity.
 - **Voice integration** — speech-to-text input, text-to-speech output with confidence-modulated prosody, cross-modal voice+text memory continuity. Designed in the SPEC; further out than the dreaming work.
-- **Client tier (commercial offering)** — persistent entities deployed for client businesses through Happy Human Agents, including setup workshops and managed deployment. Planned, not built.
+- **Client tier (commercial offering)** — persistent entities deployed for client businesses through Happy Human Agents, including setup workshops and managed deployment. Planned, not built. Pricing tiers will likely be expressed as budget tiers, which is intelligible to non-technical customers.
 
 ---
 

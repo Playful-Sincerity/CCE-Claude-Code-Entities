@@ -85,6 +85,7 @@ The [dream-skill research](research/dream-skill-research/) surveys the AI-dreami
 Other roadmap items:
 
 - **Heartbeat deployment.** Designed in [SPEC.md](SPEC.md); pending live plist install and verification.
+- **Entity metabolism — self-modulated heartbeat and daily compute budget.** Two paired ideas. (1) The entity decides whether a cycle is needed at all based on what work actually exists — if nothing has changed, nothing is pending, and no signal warrants attention, it doesn't wake just because the clock said to. (2) Each entity gets a daily compute budget it is aware of at runtime, which bounds how ambitious its active cycles can be. Together: a quiet day means longer intervals and lighter (or skipped) cycles; a busy day means more cycles, possibly deeper, up to the budget ceiling. The wildest implication — *what if the entity decides to never wake again* — is treated explicitly in the idea file with four possible reactions and a tentative leaning toward a hard daily-minimum heartbeat as the floor. Captured at [`ideas/entity-metabolism.md`](ideas/entity-metabolism.md). Builds alongside the heartbeat itself.
 - **Multi-entity coordination.** Architecture designed; only PD currently active.
 - **Client tier (HHA product).** Persistent entities as a service for client businesses; planned, not built.
 

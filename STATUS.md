@@ -49,7 +49,7 @@ The 2026-04-20 chronicle documents a meaningful cross-settings discovery: Claude
 
 ### 2. Heartbeat
 
-**Status: designed; not deployed.**
+**Status: designed; not deployed.** A self-modulation / metabolism extension is captured as a planned design at [`ideas/entity-metabolism.md`](ideas/entity-metabolism.md) — work-driven cadence (entity decides whether a cycle is warranted at all), budget-driven intensity (entity-aware daily compute budget shaping per-cycle effort), and an explicit treatment of the dormancy edge case (what if the entity decides to never wake again). To be integrated alongside the heartbeat deployment rather than retrofitted later.
 
 SPEC.md describes a launchd-scheduled heartbeat at 30-minute intervals, using the Haiku model, at a target cost of ~$0.05/day. Plan.md breaks this into `sessions/mvp-build/phase-2-heartbeat/` task specs (A: launchd plist + install script; B: emergency stop scripts; C: heartbeat protocol refinement).
 
