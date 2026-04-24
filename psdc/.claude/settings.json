@@ -1,0 +1,139 @@
+{
+  "sandbox": {
+    "enabled": true,
+    "filesystem": {
+      "allowWrite": [
+        ".",
+        "~/Wisdom Personal/people",
+        "~/.claude/projects"
+      ],
+      "denyWrite": [
+        "~/.claude/CLAUDE.md",
+        "~/.claude/settings.json",
+        "~/.claude/rules",
+        "~/.claude/skills",
+        "~/.claude/scripts",
+        "~/claude-system",
+        "~/.ssh",
+        "~/.aws",
+        "~/.gnupg",
+        "~/.config"
+      ],
+      "allowRead": [
+        ".",
+        "~/claude-system",
+        "~/.claude/rules",
+        "~/.claude/skills",
+        "~/Playful Sincerity",
+        "~/Wisdom Personal/people"
+      ],
+      "denyRead": [
+        "~/.ssh",
+        "~/.aws",
+        "~/.gnupg",
+        "~/.config",
+        "~/Library/Keychains",
+        "~/Wisdom Personal/ChatGPT Archive",
+        "~/Wisdom Personal/Claude Archive",
+        "~/Wisdom Personal/Google Archive",
+        "~/Wisdom Personal/Backup PSDC apr2:2026",
+        "~/Downloads",
+        "~/Documents"
+      ]
+    },
+    "network": {
+      "allowedDomains": [
+        "api.anthropic.com"
+      ]
+    },
+    "failIfUnavailable": true,
+    "allowUnsandboxedCommands": false
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"/Users/wisdomhappy/Playful Sincerity/PS Software/Claude Code Entities/scripts/entity-path-guard.sh\""
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Write",
+      "Edit",
+      "WebSearch",
+      "WebFetch",
+      "Agent",
+      "TodoWrite",
+      "ToolSearch",
+      "Bash(ls *)",
+      "Bash(ls)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(wc *)",
+      "Bash(find *)",
+      "Bash(tree *)",
+      "Bash(pwd)",
+      "Bash(date *)",
+      "Bash(git status*)",
+      "Bash(git log*)",
+      "Bash(git diff*)",
+      "Bash(git branch*)",
+      "Bash(git show*)",
+      "Bash(git rev-parse*)",
+      "Bash(git ls-files*)",
+      "Bash(git blame *)",
+      "Bash(which *)",
+      "Bash(stat *)",
+      "Bash(du *)",
+      "Bash(readlink *)"
+    ],
+    "deny": [
+      "Bash(rm *)",
+      "Bash(git push*)",
+      "Bash(git commit*)",
+      "Bash(git add*)",
+      "Bash(git checkout*)",
+      "Bash(git reset*)",
+      "Bash(git clean*)",
+      "Bash(git restore*)",
+      "Bash(mv *)",
+      "Bash(cp *)",
+      "Bash(chmod *)",
+      "Bash(mkdir *)",
+      "Bash(touch *)",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(python*)",
+      "Bash(node *)",
+      "Bash(perl *)",
+      "Bash(ruby *)",
+      "Bash(osascript *)",
+      "Bash(bash *)",
+      "Bash(sh *)",
+      "Bash(zsh *)",
+      "Bash(npm *)",
+      "Bash(pip *)",
+      "Bash(sudo *)",
+      "Bash(eval *)",
+      "Bash(tee *)",
+      "Bash(dd *)",
+      "Bash(ln *)",
+      "Bash(echo *)",
+      "Bash(cat *)",
+      "Bash(diff *)",
+      "Bash(claude mcp *)",
+      "Bash(claude --permission-mode *)",
+      "Bash(claude --dangerously-skip-permissions *)",
+      "Bash(claude --resume *)"
+    ]
+  }
+}

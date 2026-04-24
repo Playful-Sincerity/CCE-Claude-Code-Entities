@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+
+# Editor / workspace
+.obsidian/
+.vscode/
+*.swp
+
+# Backups (e.g. settings.json.bak-2026-04-20)
+*.bak
+*.bak-*
+
+# Local-only Claude Code settings (the project-level settings.json IS tracked)
+**/.claude/settings.local.json
+
+# Secrets — none expected, but defensive
+.env
+.env.*
+*.pem
+
+# Python / node
+__pycache__/
+*.pyc
+node_modules/

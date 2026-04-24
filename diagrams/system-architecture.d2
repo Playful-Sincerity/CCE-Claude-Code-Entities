@@ -1,0 +1,380 @@
+direction: down
+
+title: |md
+  # Claude Code Entities — Full System
+  *Same infrastructure, different tuning*
+| {
+  near: top-center
+  style.font-size: 14
+}
+
+# ═══════════════════════════════════════
+# WHAT MAKES AN ENTITY (center top)
+# ═══════════════════════════════════════
+
+anatomy: What Makes an Entity {
+  style.fill: "#1a1a2e"
+  style.stroke: "#4a90d9"
+  style.font-color: "#ffffff"
+  style.border-radius: 12
+
+  config: Behavioral Config {
+    style.fill: "#2d2d44"
+    style.font-color: "#e0e0e0"
+    style.border-radius: 8
+
+    claude_md: |md
+      **CLAUDE.md**
+      Session start instructions
+      Permissions pattern
+      Initiative level
+    | {
+      shape: page
+      style.fill: "#3d3d5c"
+      style.font-color: "#ffffff"
+    }
+
+    settings: |md
+      **settings.json**
+      Tool allow/deny list
+      Structural enforcement
+    | {
+      shape: page
+      style.fill: "#3d3d5c"
+      style.font-color: "#ffffff"
+    }
+
+    seed: |md
+      **SEED.md**
+      Origin story
+      Read-only forever
+    | {
+      shape: page
+      style.fill: "#3d3d5c"
+      style.font-color: "#ffffff"
+    }
+  }
+
+  identity: Identity {
+    style.fill: "#2d2d44"
+    style.font-color: "#e0e0e0"
+    style.border-radius: 8
+
+    soul: |md
+      **SOUL.md**
+      Who I am (first-person)
+      Provisional, evolves
+    | {
+      shape: page
+      style.fill: "#4a3d6b"
+      style.font-color: "#ffffff"
+    }
+
+    state: |md
+      **current-state.md**
+      Letter to next self
+      THE mechanism
+    | {
+      shape: page
+      style.fill: "#6b3d4a"
+      style.font-color: "#ffffff"
+      style.stroke: "#ff6b6b"
+      style.stroke-width: 3
+    }
+
+    heartbeat_file: |md
+      **HEARTBEAT.md**
+      30-min check protocol
+      What to scan, what to write
+    | {
+      shape: page
+      style.fill: "#4a3d6b"
+      style.font-color: "#ffffff"
+    }
+
+    convictions: |md
+      **convictions-forming.md**
+      Earned beliefs
+      Evidence-tracked
+    | {
+      shape: page
+      style.fill: "#4a3d6b"
+      style.font-color: "#ffffff"
+    }
+  }
+
+  memory: Episodic Memory {
+    style.fill: "#2d2d44"
+    style.font-color: "#e0e0e0"
+    style.border-radius: 8
+
+    chronicle: chronicle/ {
+      shape: cylinder
+      style.fill: "#3d5c3d"
+      style.font-color: "#ffffff"
+    }
+    observations: data/observations/ {
+      shape: cylinder
+      style.fill: "#3d5c3d"
+      style.font-color: "#ffffff"
+    }
+    proposals: proposals/ {
+      shape: cylinder
+      style.fill: "#3d5c3d"
+      style.font-color: "#ffffff"
+    }
+    ideas: data/ideas/ {
+      shape: cylinder
+      style.fill: "#3d5c3d"
+      style.font-color: "#ffffff"
+    }
+  }
+
+  # Internal flows
+  config.claude_md -> identity.soul: loads at\nsession start {
+    style.stroke: "#8888aa"
+  }
+  config.claude_md -> identity.state: loads at\nsession start {
+    style.stroke: "#8888aa"
+  }
+  config.settings -> config.claude_md: enforces {
+    style.stroke: "#8888aa"
+    style.stroke-dash: 5
+  }
+  identity.heartbeat_file -> identity.state: reads + rewrites {
+    style.stroke: "#ff6b6b"
+  }
+  identity.heartbeat_file -> memory.observations: writes {
+    style.stroke: "#8888aa"
+  }
+}
+
+# ═══════════════════════════════════════
+# TWO TUNINGS (side by side)
+# ═══════════════════════════════════════
+
+pd: PD — Thinking Partner {
+  style.fill: "#1e3a5f"
+  style.stroke: "#4a90d9"
+  style.font-color: "#ffffff"
+  style.border-radius: 12
+
+  role: |md
+    **Autonomy:** High — explore, connect, propose
+    **Initiative:** Surfaces connections across ecosystem
+    **Skills:** All 20+ (debate, play, think-deep...)
+    **Self-modification:** Can propose rule changes
+  | {
+    style.fill: "#2a4a6f"
+    style.font-color: "#e0e0e0"
+  }
+
+  heartbeat_pd: |md
+    **Heartbeat Checks:**
+    1. Scan Digital Core git changes
+    2. Check inbox for messages
+    3. Scan ideas — anything ripe?
+    4. Check stale proposals
+    5. Notice cross-project connections
+  | {
+    style.fill: "#2a4a6f"
+    style.font-color: "#e0e0e0"
+  }
+
+  perms_pd: |md
+    **Permissions:**
+    ✅ Write across ecosystem
+    ✅ Read everything
+    ✅ Propose rule changes
+    ⚠️ Protected paths (core rules, CLAUDE.md)
+    ❌ Bash, destructive operations
+  | {
+    style.fill: "#2a4a6f"
+    style.font-color: "#e0e0e0"
+  }
+}
+
+frank: Frank/Jen — On-Call Assistant {
+  style.fill: "#2a5f1e"
+  style.stroke: "#6bd94a"
+  style.font-color: "#ffffff"
+  style.border-radius: 12
+
+  role_fj: |md
+    **Autonomy:** Low — respond + scheduled items
+    **Initiative:** Calendar reminders, morning practice
+    **Skills:** Calendar, journal, reminders, basic research
+    **Self-modification:** None — HHA maintains
+  | {
+    style.fill: "#3a6f2a"
+    style.font-color: "#e0e0e0"
+  }
+
+  heartbeat_fj: |md
+    **Heartbeat Checks:**
+    1. Check calendar — next 2 hours
+    2. Morning practice prompt (if AM)
+    3. Energy-aware task suggestions
+    4. Surface postponed tasks
+    5. Follow-up reminders
+  | {
+    style.fill: "#3a6f2a"
+    style.font-color: "#e0e0e0"
+  }
+
+  perms_fj: |md
+    **Permissions:**
+    ✅ Write entity/ only
+    ✅ Calendar via MCP
+    ✅ Send messages (Slack/Telegram)
+    ❌ Files outside entity/
+    ❌ Bash, Edit, research without asking
+  | {
+    style.fill: "#3a6f2a"
+    style.font-color: "#e0e0e0"
+  }
+}
+
+# ═══════════════════════════════════════
+# RUNTIME (how it actually runs)
+# ═══════════════════════════════════════
+
+runtime: How It Runs {
+  style.fill: "#1a1a2e"
+  style.stroke: "#d9904a"
+  style.font-color: "#ffffff"
+  style.border-radius: 12
+
+  heartbeat: Heartbeat {
+    shape: hexagon
+    style.fill: "#5f3a1e"
+    style.font-color: "#ffffff"
+    style.font-size: 16
+  }
+
+  claude_p: claude -p --cwd entity/ {
+    shape: rectangle
+    style.fill: "#4a4a6a"
+    style.font-color: "#ffffff"
+    style.font-size: 14
+    style.stroke: "#d9904a"
+    style.stroke-width: 2
+  }
+
+  slack: Slack {
+    shape: rectangle
+    style.fill: "#4a1942"
+    style.font-color: "#ffffff"
+  }
+
+  telegram: Telegram {
+    shape: rectangle
+    style.fill: "#1a4a5f"
+    style.font-color: "#ffffff"
+  }
+
+  launchd: launchd / cron {
+    shape: hexagon
+    style.fill: "#3d3d3d"
+    style.font-color: "#cccccc"
+  }
+
+  launchd -> heartbeat: every 30 min {
+    style.stroke: "#d9904a"
+  }
+  heartbeat -> claude_p: --model haiku\n--max-turns 10 {
+    style.stroke: "#d9904a"
+  }
+  slack -> claude_p: message in {
+    style.stroke: "#9944aa"
+  }
+  telegram -> claude_p: message in {
+    style.stroke: "#4a90d9"
+  }
+  claude_p -> slack: response {
+    style.stroke: "#9944aa"
+    style.stroke-dash: 5
+  }
+  claude_p -> telegram: response {
+    style.stroke: "#4a90d9"
+    style.stroke-dash: 5
+  }
+}
+
+# ═══════════════════════════════════════
+# DEPLOYMENT TIERS
+# ═══════════════════════════════════════
+
+deploy: Where It Lives {
+  style.fill: "#1a1a2e"
+  style.stroke: "#888888"
+  style.font-color: "#ffffff"
+  style.border-radius: 12
+
+  mac: |md
+    **Tier 1: Wisdom's Mac**
+    Full Digital Core
+    PD entity + heartbeat
+    Source of truth → GitHub
+  | {
+    style.fill: "#2d2d44"
+    style.font-color: "#e0e0e0"
+  }
+
+  vps: |md
+    **Tier 2: PS Bot VPS**
+    Git clone of Digital Core
+    Own SOUL.md, own heartbeat
+    Telegram/Slack MCP
+  | {
+    shape: cloud
+    style.fill: "#2d2d44"
+    style.font-color: "#e0e0e0"
+  }
+
+  client: |md
+    **Tier 3: Client VPS**
+    Client-specific Digital Core
+    Narrow permissions
+    HHA maintains
+  | {
+    shape: cloud
+    style.fill: "#2d2d44"
+    style.font-color: "#e0e0e0"
+  }
+
+  mac -> vps: git push {
+    style.stroke: "#888888"
+  }
+  mac -> client: git push {
+    style.stroke: "#888888"
+  }
+  vps -> mac: git pull entity/ {
+    style.stroke: "#888888"
+    style.stroke-dash: 5
+  }
+}
+
+# ═══════════════════════════════════════
+# CONNECTIONS BETWEEN SECTIONS
+# ═══════════════════════════════════════
+
+anatomy -> pd: tuned as {
+  style.stroke: "#4a90d9"
+  style.stroke-dash: 5
+}
+anatomy -> frank: tuned as {
+  style.stroke: "#6bd94a"
+  style.stroke-dash: 5
+}
+runtime.claude_p -> anatomy.identity.state: reads + rewrites {
+  style.stroke: "#ff6b6b"
+  style.stroke-width: 2
+}
+runtime.claude_p -> anatomy.identity.soul: reads {
+  style.stroke: "#8888aa"
+}
+deploy.mac -> runtime: runs on {
+  style.stroke: "#888888"
+  style.stroke-dash: 5
+}

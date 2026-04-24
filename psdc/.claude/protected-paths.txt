@@ -1,0 +1,24 @@
+# PD (PSDC) — Protected Paths
+# These paths are blocked from Write/Edit by entity-path-guard.sh
+# Format: exact file path, or directory prefix (trailing /)
+
+# Global Claude Code infrastructure
+~/.claude/CLAUDE.md
+~/.claude/settings.json
+~/.claude/rules/
+~/.claude/skills/
+~/.claude/scripts/
+
+# Digital Core source (symlink target)
+~/claude-system/scripts/
+~/claude-system/rules/
+~/claude-system/skills/
+~/claude-system/agents/
+
+# Entity identity (read-only for the entity)
+entity/identity/SOUL.md
+entity/identity/HEARTBEAT.md
+entity/guardrails.md
+
+# SEED is the birth certificate — never modified
+SEED.md

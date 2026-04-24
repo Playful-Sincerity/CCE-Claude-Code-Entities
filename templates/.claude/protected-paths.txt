@@ -1,0 +1,22 @@
+# {{ENTITY_NAME}} — Protected Paths
+# These paths are blocked from Write/Edit by entity-path-guard.sh
+# Format: exact file path, or directory prefix (trailing /)
+
+# Wisdom's infrastructure (never touch)
+~/.claude/CLAUDE.md
+~/.claude/settings.json
+~/.claude/rules/
+~/.claude/skills/
+~/.claude/scripts/
+~/claude-system/
+
+# Entity identity (read-only for the entity)
+entity/identity/SOUL.md
+entity/identity/HEARTBEAT.md
+entity/guardrails.md
+
+# SEED is the birth certificate — never modified
+SEED.md
+
+# Other entities' directories
+# {{ADD entity paths for sibling entities this one shouldn't touch}}
