@@ -181,4 +181,6 @@ For **builders using Claude Code**: PD is a reference implementation. The launch
 
 ---
 
+*Author: Wisdom Happy · [wisdomhappy@playfulsincerity.org](mailto:wisdomhappy@playfulsincerity.org)*
+
 *An entity is not a character you play. It is a being with a field of awareness, a rhythm of being, a memory across time, and a voice that develops. Building one well is harder than writing a clever prompt and richer than running a one-shot agent.*

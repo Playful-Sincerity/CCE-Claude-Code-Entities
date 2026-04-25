@@ -167,4 +167,6 @@ This paper is the descriptive overview. The repo is where the actual work of get
 
 *Claude Code Entities — a project of Playful Sincerity. April 2026 and ongoing.*
 
+*Author: Wisdom Happy · [wisdomhappy@playfulsincerity.org](mailto:wisdomhappy@playfulsincerity.org)*
+
 *For the active development surface, see [`README.md`](../README.md). For the honest operational state today, see [`STATUS.md`](../STATUS.md). For how this got here, see [`history/HISTORY.md`](../history/HISTORY.md). Any reader who finds a gap between this paper's framing and any other source in the repo should treat STATUS as the authoritative answer on questions of current state.*

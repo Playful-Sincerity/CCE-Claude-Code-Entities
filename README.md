@@ -241,7 +241,9 @@ If you want to run your own persistent entity, [`templates/`](templates/) is the
 
 If you reference this work:
 
-> Happy, Wisdom. *Claude Code Entities: Persistent AI Entities on the Claude Code Framework.* Playful Sincerity, 2026. `<repo URL TBD>`.
+> Happy, Wisdom. *Claude Code Entities: Persistent AI Entities on the Claude Code Framework.* Playful Sincerity, 2026. https://github.com/Playful-Sincerity/CCE-Claude-Code-Entities
+
+Contact: Wisdom Happy · [wisdomhappy@playfulsincerity.org](mailto:wisdomhappy@playfulsincerity.org)
 
 ---
 
